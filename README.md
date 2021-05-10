@@ -5,6 +5,7 @@ Requst libaries.
 1. pip install python-binance
 2. pip install pandas
 3. Api key ( https://www.binance.com/en-IN/support/faq/360002502072 )
+4. pip install time
 
 This rebalance model can run only binance platform
 
