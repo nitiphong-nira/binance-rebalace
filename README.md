@@ -7,6 +7,8 @@ Requst libaries.
 3. Api key ( https://www.binance.com/en-IN/support/faq/360002502072 )
 4. pip install time
 
+Do not forget to adjust the computer clock before run this python file
+
 This rebalance model can run only binance platform
 
 This model got idea from liqudity swap in binance that rebalance the between pair products to get more coin.
