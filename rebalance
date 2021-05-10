@@ -29,13 +29,24 @@ def rebalance():
     elif XLM < BTC:
         client.order_limit_buy(symbol="XLMBTC",quantity = int(quantity), price = ('%.8f' % (float(bid[0]))))
     print("After rebalance")
-    BTC_1 = float(client.get_asset_balance(asset='BTC')['free'])/float(client.get_recent_trades(symbol='XLMBTC')[0]['price'])
-    print("BTC =",BTC_1," XLM")
-    XLM_1 = float(client.get_asset_balance(asset='XLM')['free'])
-    print("XLM =",XLM_1," XLM")
-
     sleep(5)
+    check = pd.DataFrame(data=client.get_open_orders(symbol='XLMBTC'))
+    print(check[['symbol','orderId','origQty','type','price','side']])
+    BTC_1 = float(client.get_asset_balance(asset='BTC')['free'])/float(client.get_recent_trades(symbol='XLMBTC')[0]['price'])
+    Print("If you want to collect XLM, you should look at this results.")
+    print("Your Net BTC =",BTC_1," XLM")
+    XLM_1 = float(client.get_asset_balance(asset='XLM')['free'])
+    print("Your Net XLM =",XLM_1," XLM\nTotal = ",XLM_1+BTC_1)
+    
+    Print("If you want to collect BTC, you should look at this results.")
+    BTC_1 = float(client.get_asset_balance(asset='BTC')['free'])
+    print("Your Net BTC =",BTC_1," BTC")
+    XLM_1 = float(client.get_asset_balance(asset='XLM')['free'])*/float(client.get_recent_trades(symbol='XLMBTC')[0]['price'])
+    print("Your Net XLM =",XLM_1," BTC\nTotal = ",XLM_1+BTC_1)
+    
+    print("Your limited order is :")
     check = pd.DataFrame(data=client.get_open_orders(symbol='XLMBTC'))
     print(check[['symbol','orderId','origQty','type','price','side']])
     
 rebalance()
+    
