@@ -6,9 +6,7 @@ Requst libaries.
 2. pip install pandas
 3. Api key ( https://www.binance.com/en-IN/support/faq/360002502072 )
 4. pip install time
-5. pip install pypiwin32
 
-Do not forget to adjust the computer clock before run this python file
 
 This rebalance model can run only binance platform
 
@@ -19,3 +17,7 @@ User can apply to the whlie loop for rebalancing daliy or hourly by running on c
 
 Idea of rebalace model
 https://www.investopedia.com/articles/stocks/11/rebalancing-strategies.asp
+
+Time reference adjusted
+https://binance-docs.github.io/apidocs/spot/en/#test-connectivity
+https://www.programcreek.com/python/?CodeExample=get+exchange+info
