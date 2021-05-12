@@ -10,10 +10,14 @@ from binance.enums import *
 from binance.helpers import round_step_size
 from time import sleep
 
-
 api_key = "fill up by your self by https://www.binance.com/en/support/faq/360002502072"
 api_secret = "fill up by your self by https://www.binance.com/en/support/faq/360002502072"
 client = Client(api_key, api_secret)
+
+def get_exchange_info(self):
+    success, error = await.self.request("GET", "/api/v3/exchangeInfo")
+    return success, error
+
 def after_rebalance():
     print("After rebalance")
     sleep(5)
@@ -42,10 +46,10 @@ def rebalance():
     print("XLM =",XLM," XLM")
     quantity = float((float('%.1f' % (abs(BTC-XLM)/2)))*0.9995)
 
-    if BTC + 5 < XLM : 
+    if BTC + 20 < XLM : 
         client.order_limit_sell(symbol="XLMBTC",quantity = int(quantity), price= ('%.8f' % (float(ask[0]))))
         after_rebalance()
-    elif XLM +5 < BTC:
+    elif XLM +20 < BTC:
         client.order_limit_buy(symbol="XLMBTC",quantity = int(quantity), price = ('%.8f' % (float(bid[0]))))
         after_rebalance()
     else:
