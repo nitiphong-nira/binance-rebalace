@@ -6,6 +6,7 @@ Requst libaries.
 2. pip install pandas
 3. Api key ( https://www.binance.com/en-IN/support/faq/360002502072 )
 4. pip install time
+5. pip install pypiwin32
 
 Do not forget to adjust the computer clock before run this python file
 
