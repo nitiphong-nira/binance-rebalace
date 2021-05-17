@@ -26,7 +26,7 @@ def rebalance():
     print(coin_2," =",BTC,coin_1)
     XLM = float(client.get_asset_balance(asset=coin_1)['free'])
     print(coin_1," =",XLM,coin_1)
-    quantity = float('%.1f' % (float((float('%.1f' % (abs(BTC-XLM)/2)))*0.9995)))
+    quantity = int('%.d' % (int((float('%.1f' % (abs(BTC-XLM)/2)))*0.9995)))
     print(quantity)
     if quantity > (0.1*XLM+0.1):
         if BTC < XLM : 
