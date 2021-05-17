@@ -1,4 +1,7 @@
 def after_rebalance(coin_1,coin_2,coin_pair):
+    print("Your limited order is :")
+    check = pd.DataFrame(data=client.get_open_orders(symbol=coin_pair))
+    print(check[['symbol','orderId','origQty','type','price','side']])
     print("After rebalance")
     sleep(10)
     BTC_1 = float(client.get_asset_balance(asset=coin_2)['free'])/float(client.get_recent_trades(symbol=coin_pair)[0]['price'])
@@ -6,15 +9,11 @@ def after_rebalance(coin_1,coin_2,coin_pair):
     print("Your Net",coin_2," = ",BTC_1,coin_1)
     XLM_1 = float(client.get_asset_balance(asset=coin_1)['free'])
     print("Your Net",coin_1," = ",XLM_1,coin_1,"\nTotal = ",XLM_1+BTC_1)
-    
     print("If you want to collect BTC, you should look at this results.")
     BTC_1 = float(client.get_asset_balance(asset=coin_2)['free'])
     print("Your Net",coin_2," = ",BTC_1,coin_2)
     XLM_1 = float(client.get_asset_balance(asset=coin_1)['free'])*float(client.get_recent_trades(symbol=coin_pair)[0]['price'])
     print("Your Net",coin_1," = ",XLM_1,coin_2,"\nTotal = ",XLM_1+BTC_1)
-    
-    print("Your limited order is :")
-    check = pd.DataFrame(data=client.get_open_orders(symbol=coin_pair))
     print(check[['symbol','orderId','origQty','type','price','side']])
 
 
