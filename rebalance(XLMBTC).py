@@ -42,10 +42,10 @@ def rebalance():
 
     if BTC + 20 < XLM : 
         client.order_limit_sell(symbol="XLMBTC",quantity = int(quantity), price= ('%.8f' % (float(ask[0]))))
-        after_rebalance()
+        after_rebalance("XLM","BTC","XLMBTC")
     elif XLM +20 < BTC:
         client.order_limit_buy(symbol="XLMBTC",quantity = int(quantity), price = ('%.8f' % (float(bid[0]))))
-        after_rebalance()
+        after_rebalance("XLM","BTC","XLMBTC")
     else:
         print("The order is too small to rebalance")
     
