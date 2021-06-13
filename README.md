@@ -22,3 +22,4 @@ Time reference adjusted
 https://binance-docs.github.io/apidocs/spot/en/#test-connectivity
 
 https://www.programcreek.com/python/?CodeExample=get+exchange+info
+
